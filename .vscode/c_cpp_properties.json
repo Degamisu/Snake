@@ -5,7 +5,8 @@
             "includePath": [
                 "${default}",
                 "D:/ROM/TEST_ROMS/GEN/TOOLS/sgdk190/inc",
-                "D:/ROM/TEST_ROMS/GEN/TOOLS/sgdk190/res"
+                "D:/ROM/TEST_ROMS/GEN/TOOLS/sgdk190/res",
+                "D:/ROM/TEST_ROMS/GEN/TOOLS/sgdk190/lib"
             ],
             "defines": [
                 "_DEBUG",
