@@ -1,5 +1,5 @@
 #include <genesis.h>
-
+#include <stdlib.h>
 // Define constants for the screen size and grid size
 #define SCREEN_WIDTH 320
 #define SCREEN_HEIGHT 224
@@ -110,7 +110,7 @@ void updateGame()
     }
 
     // Render the snake and food on the screen
-    VDP_clearPlan(VDP_BG_A, 1); // Updated function
+    VDP_clearTileMapRect(VDP_BG_A, 0, 0, 40, 28); // Clear the tilemap using VDP_clearTileMapRect instead
     for (int i = 0; i < snakeLength; ++i)
     {
         VDP_drawText("o", snake[i].x / GRID_SIZE, snake[i].y / GRID_SIZE);
@@ -125,13 +125,13 @@ int main()
     VDP_init();
     JOY_init();
 
-    // Set up the screen and VDP plan
+    // Set up the screen and VDP plane
     VDP_setScreenWidth320();
     VDP_setScreenHeight224();
-    VDP_setPlanSize(32, 32); // Updated function
+    VDP_setPlaneSize(32, 32, FALSE); // Use the correct function name and arguments
 
     // Initialize the random number generator
-    randomSeed(1);
+    srand(1); // Use srand to seed the random number generator
 
     // Initialize the game
     initializeGame();
